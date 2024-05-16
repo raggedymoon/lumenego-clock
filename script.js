@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var clock = $('#clock').FlipClock({
+    var clock = new FlipClock($('#clock'), {
         clockFace: 'TwentyFourHourClock'
     });
 
