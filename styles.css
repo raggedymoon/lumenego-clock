@@ -4,26 +4,27 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #000; /* Background set to black */
+    background-color: #000;
     margin: 0;
     font-family: 'Arial', sans-serif;
     color: black;
+    overflow: hidden; /* Prevents scrolling */
 }
 
 .clock {
-    background: #c98517; /* Box color behind the letters */
+    background: #c98517;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
 .date {
-    background: #c98517; /* Box color behind the letters */
+    background: #c98517;
     padding: 10px;
     border-radius: 10px;
     font-size: 24px;
-    color: black; /* Numbers color set to black */
-    text-align: center; /* Center the text within the date container */
-    width: fit-content; /* Ensure the width is only as wide as the content */
-    margin: 0 auto; /* Center the date container horizontally */
+    color: black;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
 }
