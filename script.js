@@ -1,27 +1,26 @@
-$(document).ready(function() {
-    function updateTime() {
-        var now = new Date();
-        var hours = now.getHours() % 12 || 12; // Convert to 12-hour format
-        var minutes = now.getMinutes();
-        var ampm = now.getHours() >= 12 ? 'PM' : 'AM'; // Determine AM or PM
-        var timeString = hours + (minutes < 10 ? "0" : "") + minutes + " " + ampm;
-        
-        $('#clock').text(timeString); // Set the time string directly
-    }
+function updateTime() {
+    var now = new Date();
+    var hours = now.getHours() % 12 || 12;
+    var minutes = now.getMinutes();
+    var ampm = now.getHours() >= 12 ? 'PM' : 'AM';
+    var timeString = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ' ' + ampm;
+    
+    document.getElementById('clock').innerText = timeString;
+}
 
-    updateTime();
-    setInterval(updateTime, 60000); // Update every minute
+function updateDate() {
+    var now = new Date();
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var dayName = days[now.getDay()];
+    var monthName = months[now.getMonth()];
+    var dateString = `${dayName}, ${monthName} ${now.getDate()}, ${now.getFullYear()}`;
+    
+    document.getElementById('date').innerText = dateString;
+}
 
-    function updateDate() {
-        const now = new Date();
-        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        const dayName = days[now.getDay()];
-        const monthName = months[now.getMonth()];
-        const dateString = `${dayName}, ${monthName} ${now.getDate()}, ${now.getFullYear()}`;
-        $('#date').text(dateString);
-    }
+setInterval(updateTime, 1000);
+updateTime();
 
-    setInterval(updateDate, 1000);
-    updateDate();
-});
+setInterval(updateDate, 1000);
+updateDate();
