@@ -1,17 +1,12 @@
 $(document).ready(function() {
-    var clock = new FlipClock($('#clock'), {
-        clockFace: 'HourlyCounter',
-        autoStart: false
-    });
-
     function updateTime() {
         var now = new Date();
         var hours = now.getHours() % 12 || 12; // Convert to 12-hour format
         var minutes = now.getMinutes();
-        var timeString = hours + (minutes < 10 ? "0" : "") + minutes;
+        var ampm = now.getHours() >= 12 ? 'PM' : 'AM'; // Determine AM or PM
+        var timeString = hours + (minutes < 10 ? "0" : "") + minutes + " " + ampm;
         
-        clock.setTime(hours * 3600 + minutes * 60); // Set time in seconds
-        clock.start();
+        $('#clock').text(timeString); // Set the time string directly
     }
 
     updateTime();
