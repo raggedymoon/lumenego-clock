@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var clock = new FlipClock($('#clock'), {
-        clockFace: 'HourlyCounter', // Use 'HourlyCounter' to display hours and minutes only
-        showSeconds: false // This removes the seconds
+        clockFace: 'HourlyCounter',
+        countdown: false
     });
 
     function updateDate() {
