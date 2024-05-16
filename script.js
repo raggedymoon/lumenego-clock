@@ -4,7 +4,7 @@ function updateTime() {
     var minutes = now.getMinutes();
     var ampm = now.getHours() >= 12 ? 'PM' : 'AM';
     var timeString = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ' ' + ampm;
-    
+
     document.getElementById('clock').innerText = timeString;
 }
 
@@ -15,7 +15,7 @@ function updateDate() {
     var dayName = days[now.getDay()];
     var monthName = months[now.getMonth()];
     var dateString = `${dayName}, ${monthName} ${now.getDate()}, ${now.getFullYear()}`;
-    
+
     document.getElementById('date').innerText = dateString;
 }
 
