@@ -6,7 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #000;
-    overflow: hidden; /* Hide body scrollbars */
+    overflow: hidden;
     font-family: 'Arial', sans-serif;
 }
 
@@ -23,7 +23,7 @@ body {
     background: #c98517;
     padding: 20px;
     border-radius: 10px;
-    font-size: 48px; /* Adjust font size as needed */
+    font-size: 48px;
     color: black;
     box-sizing: border-box;
 }
