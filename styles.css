@@ -4,28 +4,48 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #000;
+    background-color: #000; /* Background set to black */
     margin: 0;
     font-family: 'Arial', sans-serif;
     color: black;
-    overflow: hidden; /* Prevents scrolling */
 }
 
 .clock {
-    background: #c98517;
+    background: #c98517; /* Box color behind the letters */
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
-    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
 }
 
 .date {
-    background: #c98517;
+    background: #c98517; /* Box color behind the letters */
     padding: 10px;
     border-radius: 10px;
     font-size: 24px;
-    color: black;
+    color: black; /* Numbers color set to black */
     text-align: center;
     width: fit-content;
     margin: 0 auto;
+}
+
+/* Style scrollbars */
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #000; /* Black color for scrollbar thumb */
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #000; /* Black color for scrollbar track */
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
