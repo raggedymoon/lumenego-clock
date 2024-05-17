@@ -13,13 +13,16 @@ $(document).ready(function() {
         var minutes = now.getMinutes();
         var seconds = now.getSeconds();
 
+        // Log the current time to debug
+        console.log("Current Time:", hours, minutes, seconds);
+
         // Adjust for 12-hour format
         var hours12 = hours % 12 || 12; // Convert 0 to 12
-        var ampm = hours >= 12 ? 'PM' : 'AM';
-
-        // Set the time in seconds since midnight
-        var timeInSeconds = (hours * 3600) + (minutes * 60) + seconds;
+        var timeInSeconds = (hours12 * 3600) + (minutes * 60) + seconds;
         
+        // Log the calculated time in seconds
+        console.log("Time in Seconds:", timeInSeconds);
+
         // Set the clock time and start it
         clock.setTime(timeInSeconds);
         clock.start();
