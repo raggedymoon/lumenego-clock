@@ -11,14 +11,16 @@ $(document).ready(function() {
         var hours = now.getHours();
         var minutes = now.getMinutes();
         var seconds = now.getSeconds();
-
-        // Convert the current time into total seconds and set the clock
+        
+        // Convert current time into total seconds since midnight
         var timeInSeconds = ((hours % 12 || 12) * 3600) + (minutes * 60) + seconds;
+        
+        // Set the clock time and start it
         clock.setTime(timeInSeconds);
         clock.start();
     }
 
-    // Update the clock every second to ensure it stays accurate
+    // Update the clock every second to keep it accurate
     setInterval(updateTime, 1000);
     // Initial update
     updateTime();
@@ -34,7 +36,7 @@ $(document).ready(function() {
         $('#date').text(dateString);
     }
 
-    // Update the date every second (just to ensure accuracy)
+    // Update the date every second to ensure it stays accurate
     setInterval(updateDate, 1000);
     // Initial update
     updateDate();
