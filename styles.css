@@ -38,6 +38,15 @@ body {
     margin-top: 20px;
 }
 
+.flip-clock-wrapper ul {
+    background: #c98517;
+}
+
+.flip-clock-wrapper a {
+    color: black;
+    text-decoration: none;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
     display: none;
