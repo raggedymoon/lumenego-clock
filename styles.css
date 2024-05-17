@@ -21,20 +21,39 @@ body {
 }
 
 .clock {
-    background: #c98517;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #c98517; /* Yellow background */
     padding: 10px;
     border-radius: 10px;
     box-sizing: border-box;
     font-size: 8vw;
     max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: black;
 }
 
+.flip-clock-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.flip-clock-wrapper ul {
+    background: #c98517; /* Yellow background */
+    margin: 0 0.5vw; /* Adjust margin for spacing */
+}
+
+.flip-clock-wrapper a {
+    color: black;
+    text-decoration: none;
+}
+
+.flip-clock-divider {
+    display: none; /* Hide extra dividers */
+}
+
 .date {
-    background: #c98517;
+    background: #c98517; /* Yellow background */
     padding: 10px;
     border-radius: 10px;
     font-size: 4vw;
@@ -43,26 +62,26 @@ body {
     margin-top: 20px;
 }
 
-.flip-clock-wrapper {
-    width: 100%;
-}
-
-.flip-clock-wrapper ul {
-    background: #c98517;
-}
-
-.flip-clock-wrapper a {
-    color: black;
-    text-decoration: none;
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Hide scrollbar for Chrome, Safari, and Opera */
 body::-webkit-scrollbar {
     display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
+/* Hide scrollbar for IE, Edge, and Firefox */
 body {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    .clock {
+        font-size: 12vw; /* Adjust font size for smaller screens */
+    }
+    .flip-clock-wrapper ul {
+        margin: 0 1vw; /* Increase margin for better spacing on small screens */
+    }
+    .flip-clock-divider {
+        display: none; /* Ensure dividers are hidden on small screens */
+    }
 }
