@@ -1,31 +1,21 @@
 $(document).ready(function() {
-    // Initialize the clock
-    var clock = new FlipClock($('.clock'), {
-        clockFace: 'TwelveHourClock',
-        showSeconds: false,
-        autoStart: false
-    });
-
-    // Function to update the clock time
     function updateTime() {
         var now = new Date();
         var hours = now.getHours();
         var minutes = now.getMinutes();
         var seconds = now.getSeconds();
 
-        // Log the current time to debug
-        console.log("Current Time:", hours, minutes, seconds);
-
         // Adjust for 12-hour format
         var hours12 = hours % 12 || 12; // Convert 0 to 12
-        var timeInSeconds = (hours12 * 3600) + (minutes * 60) + seconds;
-        
-        // Log the calculated time in seconds
-        console.log("Time in Seconds:", timeInSeconds);
+        var ampm = hours >= 12 ? 'PM' : 'AM';
 
-        // Set the clock time and start it
-        clock.setTime(timeInSeconds);
-        clock.start();
+        // Set the time in the format expected by TimeCircles
+        var timeString = hours12.toString().padStart(2, '0') + ':' +
+                         minutes.toString().padStart(2, '0') + ':' +
+                         seconds.toString().padStart(2, '0') + ' ' + ampm;
+
+        $('#clock').attr('data-date', timeString);
+        $('#clock').TimeCircles().rebuild();
     }
 
     // Update the clock every second to ensure it stays accurate
