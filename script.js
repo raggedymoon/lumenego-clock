@@ -12,14 +12,8 @@ $(document).ready(function() {
         var minutes = now.getMinutes();
         var seconds = now.getSeconds();
 
-        // Log the current time to debug
-        console.log("Current Time:", hours, minutes, seconds);
-
-        // Convert the current time into total seconds since midnight
-        var timeInSeconds = ((hours % 12 || 12) * 3600) + (minutes * 60) + seconds;
-        
-        // Log the calculated time in seconds
-        console.log("Time in Seconds:", timeInSeconds);
+        // Calculate time in seconds since midnight
+        var timeInSeconds = (hours * 3600) + (minutes * 60) + seconds;
 
         // Set the clock time and start it
         clock.setTime(timeInSeconds);
@@ -42,7 +36,7 @@ $(document).ready(function() {
         $('#date').text(dateString);
     }
 
-    // Update the date every second (just to ensure accuracy)
+    // Update the date every second to ensure it stays accurate
     setInterval(updateDate, 1000);
     // Initial update
     updateDate();
