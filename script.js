@@ -8,8 +8,8 @@ $(document).ready(function() {
 
     // Function to update the clock time
     function updateTime() {
-        $.get("http://worldtimeapi.org/api/ip", function(data) {
-            var now = new Date(data.datetime);
+        $.get("https://timeapi.io/api/Time/current/zone?timeZone=America/New_York", function(data) {
+            var now = new Date(data.dateTime);
             var hours = now.getHours();
             var minutes = now.getMinutes();
             var seconds = now.getSeconds();
