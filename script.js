@@ -1,8 +1,11 @@
 $(document).ready(function() {
-    var clock = new FlipClock($('#clock'), {
+    var clock = new FlipClock($('.clock'), {
         clockFace: 'TwelveHourClock', // Use the 12-hour clock face
         showSeconds: false
     });
+
+    // Adding span for colon
+    $('<span class="flip-clock-dot">:</span>').insertAfter('.flip-clock-wrapper ul:nth-of-type(2)');
 
     function updateDate() {
         const now = new Date();
