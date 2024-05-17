@@ -38,14 +38,8 @@ body {
     align-items: center;
 }
 
-.flip-clock-wrapper ul {
-    background: #c98517;
-    margin: 0 0.5vw; /* Adjust margin for spacing */
-}
-
-.flip-clock-wrapper a {
-    color: black;
-    text-decoration: none;
+.flip-clock-divider {
+    margin: 0 1vw; /* Add spacing for the divider */
 }
 
 .date {
@@ -58,6 +52,27 @@ body {
     margin-top: 20px;
 }
 
+.flip-clock-wrapper ul {
+    background: #c98517;
+    margin: 0 0.5vw; /* Adjust margin for spacing */
+}
+
+.flip-clock-wrapper a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
 /* Media Query for Mobile Devices */
 @media (max-width: 600px) {
     .clock {
@@ -65,5 +80,8 @@ body {
     }
     .flip-clock-wrapper ul {
         margin: 0 1vw; /* Increase margin for better spacing on small screens */
+    }
+    .flip-clock-divider {
+        margin: 0 2vw; /* Increase margin for divider on small screens */
     }
 }
