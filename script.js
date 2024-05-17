@@ -12,7 +12,7 @@ $(document).ready(function() {
         var minutes = now.getMinutes();
         var seconds = now.getSeconds();
 
-        // Adjust for 12-hour format and get the total time in seconds
+        // Convert the current time into total seconds and set the clock
         var timeInSeconds = ((hours % 12 || 12) * 3600) + (minutes * 60) + seconds;
         clock.setTime(timeInSeconds);
         clock.start();
