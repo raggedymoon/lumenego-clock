@@ -38,8 +38,14 @@ body {
     align-items: center;
 }
 
-.flip-clock-dot {
-    margin: 0 1vw;
+.flip-clock-wrapper ul {
+    background: #c98517;
+    margin: 0 0.5vw; /* Adjust margin for spacing */
+}
+
+.flip-clock-wrapper a {
+    color: black;
+    text-decoration: none;
 }
 
 .date {
@@ -50,27 +56,6 @@ body {
     color: black;
     text-align: center;
     margin-top: 20px;
-}
-
-.flip-clock-wrapper ul {
-    background: #c98517;
-    margin: 0 0.5vw; /* Add margin to ul elements */
-}
-
-.flip-clock-wrapper a {
-    color: black;
-    text-decoration: none;
-}
-
-/* Hide scrollbar for Chrome, Safari, and Opera */
-body::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for IE, Edge, and Firefox */
-body {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
 }
 
 /* Media Query for Mobile Devices */

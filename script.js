@@ -4,9 +4,6 @@ $(document).ready(function() {
         showSeconds: false
     });
 
-    // Adding span for colon
-    $('<span class="flip-clock-dot">:</span>').insertAfter('.flip-clock-wrapper ul:nth-of-type(2)');
-
     function updateDate() {
         const now = new Date();
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
