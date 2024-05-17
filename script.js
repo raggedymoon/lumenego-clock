@@ -10,15 +10,16 @@ $(document).ready(function() {
         var now = new Date();
         var hours = now.getHours();
         var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
 
-        // Adjust for 12-hour format
-        var timeInMinutes = (hours % 12 || 12) * 60 + minutes;
-        clock.setTime(timeInMinutes);
+        // Adjust for 12-hour format and get the total time in seconds
+        var timeInSeconds = ((hours % 12 || 12) * 3600) + (minutes * 60) + seconds;
+        clock.setTime(timeInSeconds);
         clock.start();
     }
 
-    // Update the clock every minute
-    setInterval(updateTime, 60000);
+    // Update the clock every second to ensure it stays accurate
+    setInterval(updateTime, 1000);
     // Initial update
     updateTime();
 
