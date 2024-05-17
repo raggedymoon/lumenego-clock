@@ -1,4 +1,11 @@
 $(document).ready(function() {
+    // Initialize the clock
+    var clock = new FlipClock($('.clock'), {
+        clockFace: 'TwelveHourClock',
+        showSeconds: false,
+        autoStart: false
+    });
+
     // Function to update the clock time
     function updateTime() {
         var now = new Date();
@@ -15,13 +22,6 @@ $(document).ready(function() {
         
         // Log the calculated time in seconds
         console.log("Time in Seconds:", timeInSeconds);
-
-        // Initialize the clock
-        var clock = new FlipClock($('.clock'), {
-            clockFace: 'TwelveHourClock',
-            showSeconds: false,
-            autoStart: false
-        });
 
         // Set the clock time and start it
         clock.setTime(timeInSeconds);
