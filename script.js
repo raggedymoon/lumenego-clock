@@ -1,41 +1,49 @@
-$(document).ready(function() {
-    function updateTime() {
-        var now = new Date();
-        var hours = now.getHours();
-        var minutes = now.getMinutes();
-        var seconds = now.getSeconds();
-
-        // Adjust for 12-hour format
-        var hours12 = hours % 12 || 12; // Convert 0 to 12
-        var ampm = hours >= 12 ? 'PM' : 'AM';
-
-        // Set the time in the format expected by TimeCircles
-        var timeString = hours12.toString().padStart(2, '0') + ':' +
-                         minutes.toString().padStart(2, '0') + ':' +
-                         seconds.toString().padStart(2, '0') + ' ' + ampm;
-
-        $('#clock').attr('data-date', timeString);
-        $('#clock').TimeCircles().rebuild();
-    }
-
-    // Update the clock every second to ensure it stays accurate
-    setInterval(updateTime, 1000);
-    // Initial update
-    updateTime();
-
-    // Function to update the date
-    function updateDate() {
-        const now = new Date();
-        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        const dayName = days[now.getDay()];
-        const monthName = months[now.getMonth()];
-        const dateString = `${dayName}, ${monthName} ${now.getDate()}, ${now.getFullYear()}`;
-        $('#date').text(dateString);
-    }
-
-    // Update the date every second (just to ensure accuracy)
-    setInterval(updateDate, 1000);
-    // Initial update
-    updateDate();
-});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Flip Clock Widget</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+        .clock-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 90vw;
+            max-width: 600px;
+            height: 100%;
+        }
+        .date {
+            background: #c98517;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 4vw;
+            color: black;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock-container">
+        <div class="clock" id="clock"></div>
+        <div class="date" id="date"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
