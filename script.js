@@ -3,33 +3,28 @@ $(document).ready(function() {
     var clock = new FlipClock($('.clock'), {
         clockFace: 'TwelveHourClock',
         showSeconds: false,
-        autoStart: false
+        autoStart: true
     });
 
     // Function to update the clock time
     function updateTime() {
-        var now = new Date();
-        var hours = now.getHours();
-        var minutes = now.getMinutes();
-        var seconds = now.getSeconds();
+        $.get("http://worldtimeapi.org/api/ip", function(data) {
+            var now = new Date(data.datetime);
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
 
-        // Log the current time to debug
-        console.log("Current Time:", hours, minutes, seconds);
+            // Adjust for 12-hour format
+            var hours12 = hours % 12 || 12; // Convert 0 to 12
+            var timeInSeconds = (hours12 * 3600) + (minutes * 60) + seconds;
 
-        // Adjust for 12-hour format
-        var hours12 = hours % 12 || 12; // Convert 0 to 12
-        var timeInSeconds = (hours12 * 3600) + (minutes * 60) + seconds;
-        
-        // Log the calculated time in seconds
-        console.log("Time in Seconds:", timeInSeconds);
-
-        // Set the clock time and start it
-        clock.setTime(timeInSeconds);
-        clock.start();
+            // Set the clock time and start it
+            clock.setTime(timeInSeconds);
+        });
     }
 
-    // Update the clock every second to ensure it stays accurate
-    setInterval(updateTime, 1000);
+    // Update the clock every minute to ensure it stays accurate
+    setInterval(updateTime, 60000);
     // Initial update
     updateTime();
 
@@ -44,7 +39,7 @@ $(document).ready(function() {
         $('#date').text(dateString);
     }
 
-    // Update the date every second (just to ensure accuracy)
+    // Update the date every second to ensure accuracy
     setInterval(updateDate, 1000);
     // Initial update
     updateDate();
