@@ -54,6 +54,7 @@ body {
 
 .flip-clock-wrapper ul {
     background: #c98517;
+    margin: 0 0.5vw; /* Add margin to ul elements */
 }
 
 .flip-clock-wrapper a {
@@ -70,4 +71,14 @@ body::-webkit-scrollbar {
 body {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    .clock {
+        font-size: 12vw; /* Adjust font size for smaller screens */
+    }
+    .flip-clock-wrapper ul {
+        margin: 0 1vw; /* Increase margin for better spacing on small screens */
+    }
 }
