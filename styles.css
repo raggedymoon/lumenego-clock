@@ -1,29 +1,68 @@
 body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.clock-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #000; /* Background set to black */
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    color: black;
+    width: 90vw;
+    max-width: 600px;
+    height: 100%;
 }
 
 .clock {
-    background: #c98517; /* Box color behind the letters */
-    padding: 20px;
+    background: #c98517;
+    padding: 10px;
     border-radius: 10px;
-    margin-bottom: 20px;
+    box-sizing: border-box;
+    font-size: 8vw;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
 }
 
 .date {
-    background: #c98517; /* Box color behind the letters */
+    background: #c98517;
     padding: 10px;
     border-radius: 10px;
-    font-size: 24px;
-    color: black; /* Numbers color set to black */
-    text-align: center; /* Center the text within the date container */
-    width: fit-content; /* Ensure the width is only as wide as the content */
-    margin: 0 auto; /* Center the date container horizontally */
+    font-size: 4vw;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.flip-clock-wrapper {
+    width: 100%;
+}
+
+.flip-clock-wrapper ul {
+    background: #c98517;
+}
+
+.flip-clock-wrapper a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
