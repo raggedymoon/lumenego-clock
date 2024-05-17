@@ -1,10 +1,4 @@
 $(document).ready(function() {
-    // Initialize the clock
-    var clock = new FlipClock($('.clock'), {
-        clockFace: 'TwelveHourClock',
-        showSeconds: false
-    });
-
     // Function to update the clock time
     function updateTime() {
         var now = new Date();
@@ -12,8 +6,22 @@ $(document).ready(function() {
         var minutes = now.getMinutes();
         var seconds = now.getSeconds();
 
-        // Calculate time in seconds since midnight
-        var timeInSeconds = (hours * 3600) + (minutes * 60) + seconds;
+        // Log the current time to debug
+        console.log("Current Time:", hours, minutes, seconds);
+
+        // Adjust for 12-hour format
+        var hours12 = hours % 12 || 12; // Convert 0 to 12
+        var timeInSeconds = (hours12 * 3600) + (minutes * 60) + seconds;
+        
+        // Log the calculated time in seconds
+        console.log("Time in Seconds:", timeInSeconds);
+
+        // Initialize the clock
+        var clock = new FlipClock($('.clock'), {
+            clockFace: 'TwelveHourClock',
+            showSeconds: false,
+            autoStart: false
+        });
 
         // Set the clock time and start it
         clock.setTime(timeInSeconds);
@@ -36,7 +44,7 @@ $(document).ready(function() {
         $('#date').text(dateString);
     }
 
-    // Update the date every second to ensure it stays accurate
+    // Update the date every second (just to ensure accuracy)
     setInterval(updateDate, 1000);
     // Initial update
     updateDate();
