@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var clock = new FlipClock($('#clock'), {
-        clockFace: 'TwentyFourHourClock'
+        clockFace: 'TwelveHourClock', // Use the 12-hour clock face
+        showSeconds: false
     });
 
     function updateDate() {
