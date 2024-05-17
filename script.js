@@ -1,23 +1,8 @@
 $(document).ready(function() {
     var clock = new FlipClock($('#clock'), {
-        clockFace: 'HourlyCounter',
-        countdown: false,
+        clockFace: 'TwelveHourClock', // Use the 12-hour clock face
         showSeconds: false
     });
-
-    function updateTime() {
-        var now = new Date();
-        var hours = now.getHours() % 12 || 12;
-        var minutes = now.getMinutes();
-        var ampm = now.getHours() >= 12 ? 'PM' : 'AM';
-        var timeInSeconds = (hours * 60 * 60) + (minutes * 60); // Set time in seconds
-
-        clock.setTime(timeInSeconds);
-        clock.start();
-    }
-
-    updateTime();
-    setInterval(updateTime, 60000); // Update every minute
 
     function updateDate() {
         const now = new Date();
