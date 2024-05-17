@@ -11,21 +11,27 @@ $(document).ready(function() {
         var hours = now.getHours();
         var minutes = now.getMinutes();
         var seconds = now.getSeconds();
-        
-        // Convert current time into total seconds since midnight
+
+        // Log the current time to debug
+        console.log("Current Time:", hours, minutes, seconds);
+
+        // Convert the current time into total seconds since midnight
         var timeInSeconds = ((hours % 12 || 12) * 3600) + (minutes * 60) + seconds;
         
+        // Log the calculated time in seconds
+        console.log("Time in Seconds:", timeInSeconds);
+
         // Set the clock time and start it
         clock.setTime(timeInSeconds);
         clock.start();
     }
 
-    // Update the clock every second to keep it accurate
+    // Update the clock every second to ensure it stays accurate
     setInterval(updateTime, 1000);
     // Initial update
     updateTime();
 
-    // Update the date
+    // Function to update the date
     function updateDate() {
         const now = new Date();
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -36,7 +42,7 @@ $(document).ready(function() {
         $('#date').text(dateString);
     }
 
-    // Update the date every second to ensure it stays accurate
+    // Update the date every second (just to ensure accuracy)
     setInterval(updateDate, 1000);
     // Initial update
     updateDate();
