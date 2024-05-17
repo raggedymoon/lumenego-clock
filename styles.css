@@ -15,27 +15,36 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 90vw;
+    max-width: 600px;
     height: 100%;
 }
 
 .clock {
     background: #c98517;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
-    font-size: 48px;
-    color: black;
     box-sizing: border-box;
+    font-size: 8vw;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
 }
 
 .date {
     background: #c98517;
     padding: 10px;
     border-radius: 10px;
-    font-size: 24px;
+    font-size: 4vw;
     color: black;
     text-align: center;
     margin-top: 20px;
+}
+
+.flip-clock-wrapper {
+    width: 100%;
 }
 
 .flip-clock-wrapper ul {
