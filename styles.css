@@ -31,38 +31,9 @@ body {
     justify-content: center;
     align-items: center;
     color: black;
+    letter-spacing: 1vw; /* Add spacing between characters */
 }
 
 .date {
     background: #c98517;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 4vw;
-    color: black;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.flip-clock-wrapper {
-    width: 100%;
-}
-
-.flip-clock-wrapper ul {
-    background: #c98517;
-}
-
-.flip-clock-wrapper a {
-    color: black;
-    text-decoration: none;
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-body::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-body {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-}
+    padding: 1
